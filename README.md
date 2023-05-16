@@ -1,2 +1,2 @@
-# Programacion-orientada-a-objetos
-Gpo 304
+# Proyecto para Tienda Departamental Pequeña
+Este proyecto esta dirigido para una tienda departamental que funcione para crear un catalogo e inventario. De esta manera, se gestionan los productos y los tipos de producto que estan disponibles. De igual manera mostrar los detalles de cada producto. Por ejemplo, las prendas de ropa llevan tallas pero un muñeco de coleccion no. De esta manera tambien demostrar cuando un producto esta disponible o no. 
