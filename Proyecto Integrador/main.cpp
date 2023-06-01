@@ -15,16 +15,16 @@ int main(){
     Liverpool.agregarDepartamento(dep3);
 
     //Crear y agrega un producto para el departamento de Ropa
-    Producto producto1("Playera Tommy Hilfiger", 700, "Ropa");
-    dep1.agregaProducto(producto1);
+    Ropa Prenda1("dep1","Liverpool","Playera Tommy Hilfiger",899.99,"M","Hombres");
+    dep1.agregaProducto(Prenda1);
 
     //Crea y agrega un producto para el departamento de Zapatos
-    Producto producto2("Nike Dunks", 2800, "Zapatos");
-    dep2.agregaProducto(producto2);
+    Zapatos Tenis1("dep2","Liverpool","Nike Dunks", 2799.99, 9, "Deportivos");
+    dep2.agregaProducto(Tenis1);
 
     //Crear y agrega un producto para el departamento de Coleccionables
-    Producto producto3("Figura Rengoku", 800, "Coleccionables");
-    dep3.agregaProducto(producto3);
+    Coleccionables Figura1("dep3","Liverpool","Rengoku", 399.99,"Funko");
+    dep3.agregaProducto(Figura1);
 
     //Obtener la lista de los departamentos de la tienda
     vector<Departamento> departamentos = Liverpool.getDepartamento();
@@ -32,9 +32,9 @@ int main(){
     //Mostrar los productos de cada departamento
     for (const auto& departamento : departamentos) {
         cout << "Departamento: " << departamento.getNombre() << endl;
-        vector<Producto> productos = departamento.getProductos();
+        vector<Producto*> productos = departamento.getProductos();
         for (const auto& producto : productos) {
-            cout << "Producto: " << producto.getNombre() << ", $" << producto.getPrecio() << endl;
+           producto->mostrarInfo();
         }
         cout << endl;
     }
