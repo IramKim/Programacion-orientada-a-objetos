@@ -4,3 +4,6 @@ Este proyecto esta dirigido para gestionar una tienda departamental que funcione
 
 ## UML
 En el diagrama la clase "Tienda" es la principal y se asocian las clases "Departamento" y "Producto", De esta manera la tienda contara con departamentos que contendran los productos de la clase "Producto". Esta clase contendra clases hijas de las cuales se derivaran los tipos de productos que hay, como la "Ropa", "Tenis" y "Coleccionables". "Producto" es una clase abstracta ya que solo contiene la información mas util de un producto.
+
+## Casos en el que el proyecto dejaria de funcionar
+Este codigo esta diseñado para un sistema de inventario muy pequeño y no para generar grandes cantidades de tiendas, departamentos y productos. Ya que si se aplicaran a estos casos el codigo inevitablemente colapsaria. Otro caso seria en el cual se tengan que cambiar los datos de los productos constantemente (variables continuas). Ya que se tendrian que reestablecer los vectores y/o arreglos que contienen objetos de cada clase.
