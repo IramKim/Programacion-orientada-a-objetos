@@ -1,47 +1,61 @@
 #include "tienda.h"
 
 int main(){
-    //Crea la tienda
-    Tienda Liverpool("Liverpool");
 
-    //Crea departamentos
-    Departamento dep1("Ropa","Liverpool");
-    Departamento dep2("Zapatos","Liverpool");
-    Departamento dep3("Coleccionables","Liverpool");
+//Crear una Tienda
+Tienda Liverpool("Liverpool");
 
-     //Agregar departamentos a la tienda "Liverpool"
-    Liverpool.agregarDepartamento(dep1);
-    Liverpool.agregarDepartamento(dep2);
-    Liverpool.agregarDepartamento(dep3);
+//Crear Departamentos
 
-    //Crear y agrega un producto para el departamento de Ropa
-    Ropa Prenda1("dep1","Liverpool","Playera Tommy Hilfiger",899.99,"M","Hombres");
-    dep1.agregaProducto(Prenda1);
+Departamento* Dep1 = new Departamento("Prendas","Liverpool");
+Departamento* Dep2= new Departamento("Zapatos","Liverpool");
+Departamento* Dep3 = new Departamento("Juguetes","Liverpool");
 
-    //Crea y agrega un producto para el departamento de Zapatos
-    Zapatos Tenis1("dep2","Liverpool","Nike Dunks", 2799.99, 9, "Deportivos");
-    dep2.agregaProducto(Tenis1);
+//Agrega Departamentos a la Tienda 
+Liverpool.agregarDepartamento(Dep1);
+Liverpool.agregarDepartamento(Dep2);
+Liverpool.agregarDepartamento(Dep3);
 
-    //Crear y agrega un producto para el departamento de Coleccionables
-    Coleccionables Figura1("dep3","Liverpool","Rengoku", 399.99,"Funko");
-    dep3.agregaProducto(Figura1);
+//Crea Productos de cada Categoria
 
-    //Obtener la lista de los departamentos de la tienda
-    vector<Departamento> departamentos = Liverpool.getDepartamento();
+Producto* Pl1 = new Ropa("Dep1",Liverpool.getNombre(),"Playera Tommy Hilfiger",699.99f,"L","Hombres");
+Producto* Chm1 = new Ropa("Dep1",Liverpool.getNombre(),"Sudadera Adidas",999.99f,"M","Ninos");
+Producto* Pant1 = new Ropa("Dep1",Liverpool.getNombre(),"Jeans Levis 501",1299.99f,"30/32","Hombres");
 
-    //Mostrar los productos de cada departamento
-    for (const auto& departamento : departamentos) {
-        cout << "Departamento: " << departamento.getNombre() << endl;
-        vector<Producto*> productos = departamento.getProductos();
-        for (const auto& producto : productos) {
-           producto->mostrarInfo();
-        }
-        cout << endl;
-    }
+Producto* Ten1 = new Zapatos("Dep2",Liverpool.getNombre(),"Tenis Nike",1299.99f,3,"Mujeres");
+Producto* Botas1= new Zapatos("Dep2",Liverpool.getNombre(),"Botas Timberland",1099.99f,10,"Hombres");
 
-    return 0;
+Producto* Funk1 = new Coleccionables("Dep3",Liverpool.getNombre(),"Funko Pop Rengoku",399.99f,"Funko");
+
+//Agregar Productos a su respectivo Departamento
+Dep1->agregaProducto(Pl1);
+Dep1->agregaProducto(Chm1);
+Dep1->agregaProducto(Pant1);
+
+Dep2->agregaProducto(Ten1);
+Dep2->agregaProducto(Botas1);
+
+Dep3->agregaProducto(Funk1);
+
+//Imprime todos los productos del Dep1
+Dep1->muestraProductos();
+
+//Imprime todos los productos del Dep2
+Dep2->muestraProductos();
+
+//Imprime la información de productos (Funk1 y Botas1)
+Funk1->mostrarInfo();
+Botas1->mostrarInfo();
+
+//Liberar memoria
+
+delete Pl1;
+delete Chm1;
+delete Pant1;
+delete Ten1;
+delete Botas1;
+delete Funk1;
+
 }
-
-
 
 
