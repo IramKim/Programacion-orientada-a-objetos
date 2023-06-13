@@ -1,0 +1,5 @@
+1. Se actualizo el UML a una version correspondiente al codigo.
+2. Se agrego la evidencia de los casos en los que dejaria de funcionar el proyecto en el README
+3. Ahora el codigo contiene las sobreecarga y sobreescritrua (ej: constructores y funciones)
+4. Se implementaron apuntadores y creacion de objetos con funciones como new. Se utilizan arreglos de apuntadores. (Polimorfismo)
+5. Se declaro abstracta la clase de Producto y evita la creacion de objetos a partir de este.
